@@ -1,5 +1,5 @@
 {
-    "Automated Build pipeline":{
+    "Automated Testing":{
         "Description" : "",
         "EnabledBy":[
 
@@ -7,16 +7,22 @@
         "BetterTogether":[
 
         ],
-        "BadMemory":[
-            
+        "ReducesFailureOf":[
+            "Continous Integration"
         ]
 
     },
     "Continous Integration":{
-        "Description" : ""
+        "Description" : "",
+        "EnabledBy":[
+            
+        ]
     },
     "Continous Delivery":{
-        "Description" : ""
+        "Description" : "",
+        "EnabledBy":[
+            "Continous Integration"
+        ]
 
     },
     "Continous Deployment":{
