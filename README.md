@@ -9,5 +9,6 @@ Big thank you to Adam Olsen for the original Warzone script that gave me the ide
 [WarzoneResearch.py](https://github.com/Warzone2100/warzone2100/blob/3.4.1/tools/tech-tree-chart-generator/warzoneresearch.py)
 
 ## References and Libraries 
-[Uses PyDot](https://github.com/pydot/pydot)
-[Uses JSON built in](https://www.w3schools.com/python/python_json.asp)
+ * [Uses PyDot](https://github.com/pydot/pydot) 
+ * [Uses JSON built in](https://www.w3schools.com/python/python_json.asp) 
+ * [Uses Python3 dev container](https://github.com/microsoft/vscode-dev-containers/tree/master/containers/python-3)
