@@ -7,3 +7,7 @@ I was looking through the source code of [Warzone 3100](https://github.com/Warzo
 
 Big thank you to Adam Olsen for the original Warzone script that gave me the idea
 [WarzoneResearch.py](https://github.com/Warzone2100/warzone2100/blob/3.4.1/tools/tech-tree-chart-generator/warzoneresearch.py)
+
+## References and Libraries 
+[Uses PyDot](https://github.com/pydot/pydot)
+[Uses JSON built in](https://www.w3schools.com/python/python_json.asp)
