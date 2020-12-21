@@ -1,1 +1,26 @@
-{}
+{
+    "Automated Build pipeline":{
+        "Description" : "",
+        "EnabledBy":[
+
+        ],
+        "BetterTogether":[
+
+        ],
+        "BadMemory":[
+            
+        ]
+
+    },
+    "Continous Integration":{
+        "Description" : ""
+    },
+    "Continous Delivery":{
+        "Description" : ""
+
+    },
+    "Continous Deployment":{
+        "Description" : ""
+    }
+    
+}
