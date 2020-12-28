@@ -1,32 +1,35 @@
 {
     "Automated Testing":{
-        "Description" : "",
-        "EnabledBy":[
-
-        ],
-        "BetterTogether":[
-
+        "Description" : "Automating tests",
+        "BetterTogetherWith":[
+            "Exploratory Testing"
         ],
         "ReducesFailureOf":[
-            "Continous Integration"
+            "Continuous Integration"
         ]
 
     },
-    "Continous Integration":{
-        "Description" : "",
-        "EnabledBy":[
-            
+    "Exploratory Testing":{
+        "Description": "Manually exploring the edges to find new tests to automate",
+        "BetterTogetherWith":[
+            "Automated Testing"
         ]
     },
-    "Continous Delivery":{
-        "Description" : "",
-        "EnabledBy":[
-            "Continous Integration"
+    "Continuous Integration":{
+        "Description" : "Automatically integrate code from all sources, build and run ready for test",
+        "Enables":[
+            "Continuous Delivery"
+        ]
+    },
+    "Continuous Delivery":{
+        "Description" : "Automatically build latest integrated code, prepare ready to run in production",
+        "Enables":[
+            "Continuous Deployment"
         ]
 
     },
-    "Continous Deployment":{
-        "Description" : ""
+    "Continuous Deployment":{
+        "Description" : "Deploy the latest build to production automatically"
     }
     
 }

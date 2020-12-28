@@ -11,11 +11,24 @@ import json
 import pydot
 
 class Practice(object):
-    def __init__(self,name,rest):
+    
+    
+    def __init__(self, name, practice_detail):
         self.name = name
         self.label = None
+        self.enables = set()
 
+        # if 'Description' in practice_detail:
+        #     print(practice_detail.Description)
+
+        if 'Enables' in practice_detail:
+            for enabled in practice_detail['Enables']:
+                self.enables.update(enabled)
+
+        print(practice_detail)
     
+
+
 
 def read_map_json():
     practices = {}
@@ -45,6 +58,15 @@ def make_the_map():
         node.set_fillcolor('lightgrey')
         node.set_fontsize('24')
         graph.add_node(node)
+
+    for practice in practices:
+        print(practice)
+        if hasattr(practices[practice], 'enables'):
+            # I don't understand why enables which I was trying to make an array is now a character map and my iterator is going through one letter at a time?
+            for Enables in practices[practice].enables:
+                print(practice & " -> " & Enables)
+                edge = pydot.Edge(practice, Enables)
+                graph.add_edge(edge)
 
     #print(Practices)
     graph.write_svg('DevOpsMap.svg')

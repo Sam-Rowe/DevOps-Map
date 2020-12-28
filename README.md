@@ -8,6 +8,18 @@ I was looking through the source code of [Warzone 3100](https://github.com/Warzo
 Big thank you to Adam Olsen for the original Warzone script that gave me the idea
 [WarzoneResearch.py](https://github.com/Warzone2100/warzone2100/blob/3.4.1/tools/tech-tree-chart-generator/warzoneresearch.py)
 
+## Notes on connections
+
+I have flip flopped on the connection names. I want to keep it simple and have as few edge types as possible to maintain the understanding of the map but some descriptions are better than others.
+
+__The three I have chosen are:__
+ * Enables  
+   Enables is a one way -> edge. This Enables that to work. I considered, enhances but it isn't strong enough. Enables is almost Mandatory in my mind. 
+ * BetterTogetherWith
+   This is better together with that. <--> A Bidirectional edge. Both nodes need to match the other for validation. They are both more useful when both are being used. But that does not mean they have to be.
+ * ReducesFailureOf 
+   This reduces the failure of that. -> a one way edge. Not mandatory, the *that* can be done without *this* but it is more risky. I have considered changing the term to Increase Confidence In but thought it less accurate. Feel free to share with Sponsors and busines groups the constructed synonym in this context. 
+
 ## References and Libraries 
  * [Uses PyDot](https://github.com/pydot/pydot) 
  * [Uses JSON built in](https://www.w3schools.com/python/python_json.asp) 
