@@ -16,14 +16,14 @@ class Practice(object):
     def __init__(self, name, practice_detail):
         self.name = name
         self.label = None
-        self.enables = set()
+        self.enables = []
 
         # if 'Description' in practice_detail:
         #     print(practice_detail.Description)
 
         if 'Enables' in practice_detail:
             for enabled in practice_detail['Enables']:
-                self.enables.update(enabled)
+                self.enables.append(enabled)
 
         print(practice_detail)
     
@@ -64,7 +64,7 @@ def make_the_map():
         if hasattr(practices[practice], 'enables'):
             # I don't understand why enables which I was trying to make an array is now a character map and my iterator is going through one letter at a time?
             for Enables in practices[practice].enables:
-                print(practice & " -> " & Enables)
+                print(f"{practice}  ->   {Enables}")
                 edge = pydot.Edge(practice, Enables)
                 graph.add_edge(edge)
 
