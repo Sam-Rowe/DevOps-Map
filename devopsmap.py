@@ -9,14 +9,17 @@
 
 import json
 import pydot
+import constants
+
 
 class Practice(object):
-    
     
     def __init__(self, name, practice_detail):
         self.name = name
         self.label = None
         self.enables = []
+        self.reduces_failure_of = []
+        self.better_with = []
 
         # if 'Description' in practice_detail:
         #     print(practice_detail.Description)
@@ -25,7 +28,15 @@ class Practice(object):
             for enabled in practice_detail['Enables']:
                 self.enables.append(enabled)
 
-        print(practice_detail)
+        if 'ReducesFailureOf' in practice_detail:
+            for reduces_failure_of in practice_detail['ReducesFailureOf']:
+                self.reduces_failure_of.append(reduces_failure_of)
+
+        if 'BetterTogetherWith' in practice_detail:
+            for better_with in practice_detail['BetterTogetherWith']:
+                self.better_with.append(better_with)
+
+        # print(practice_detail)
     
 
 
@@ -62,10 +73,27 @@ def make_the_map():
     for practice in practices:
         print(practice)
         if hasattr(practices[practice], 'enables'):
-            # I don't understand why enables which I was trying to make an array is now a character map and my iterator is going through one letter at a time?
             for Enables in practices[practice].enables:
-                print(f"{practice}  ->   {Enables}")
+                print(f"{practice}  --->   {Enables}")
                 edge = pydot.Edge(practice, Enables)
+                edge.set_tooltip(f"{practice}  enables   {Enables}")
+                edge.set_color(constants.GREEN)
+                graph.add_edge(edge)
+
+        if hasattr(practices[practice], 'reduces_failure_of'):
+            for reduce_fail in practices[practice].reduces_failure_of :
+                print(f"{practice}  -!!->   {reduce_fail}")
+                edge = pydot.Edge(practice, reduce_fail)
+                edge.set_tooltip(f"{practice}  reduces the failure rate of  {reduce_fail}")
+                edge.set_color(constants.ORANGE)
+                graph.add_edge(edge)
+
+        if hasattr(practices[practice], 'better_with'):
+            for better_with in practices[practice].better_with :
+                print(f"{practice}  -+->   {better_with}")
+                edge = pydot.Edge(practice, better_with)
+                edge.set_tooltip(f"{practice}  better together with  {better_with}")
+                edge.set_color(constants.PURPLE)
                 graph.add_edge(edge)
 
     #print(Practices)

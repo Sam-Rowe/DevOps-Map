@@ -26,6 +26,7 @@ __The three I have chosen are:__
  * [Uses PyDot](https://github.com/pydot/pydot) 
  * [Uses JSON built in](https://www.w3schools.com/python/python_json.asp) 
  * [Uses Python3 dev container](https://github.com/microsoft/vscode-dev-containers/tree/master/containers/python-3)
+ * [Invisible edges to change relative location. use this to enable graph to become a map](https://graphviz.org/Gallery/undirected/grid.html) 
 
 ## Setup for development outside of a DevContainer
 
