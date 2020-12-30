@@ -9,6 +9,25 @@
         ]
 
     },
+    "Unit Testing":{
+        "Description": "Test units of code independently",
+        "Enables":[
+            "Continuous Integration"
+        ]
+    },
+    "Agile Work ( Kanban/Scrum )":{
+        "Description": "Planning and organising work using agile methods",
+        "ReducesFailureOf":[
+            "Test Driven Development"
+        ]
+    },
+    "Test Driven Development":{
+        "Description": "Using ",
+        "ReducesFailureOf":[
+            "Unit Testing",
+            "Automated Testing"
+        ]
+    },
     "Exploratory Testing":{
         "Description": "Manually exploring the edges to find new tests to automate",
         "BetterTogetherWith":[
