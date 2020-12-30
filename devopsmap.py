@@ -63,10 +63,10 @@ def make_the_map():
     for practice in practices:
         node = pydot.Node(practice)
         # node.set_label(practice.label)
-        node.set_shape('box')
+        node.set_shape('egg')
         node.set_style('filled,setlinewidth(3.0)')
-        node.set_color('black')
-        node.set_fillcolor('lightgrey')
+        node.set_fontcolor(constants.NODE_TEXT)
+        node.set_fillcolor(constants.NODE_COLOUR)
         node.set_fontsize('24')
         graph.add_node(node)
 
@@ -77,7 +77,7 @@ def make_the_map():
                 print(f"{practice}  --->   {Enables}")
                 edge = pydot.Edge(practice, Enables)
                 edge.set_tooltip(f"{practice}  enables   {Enables}")
-                edge.set_color(constants.GREEN)
+                edge.set_color(constants.EDGE1)
                 graph.add_edge(edge)
 
         if hasattr(practices[practice], 'reduces_failure_of'):
@@ -85,7 +85,7 @@ def make_the_map():
                 print(f"{practice}  -!!->   {reduce_fail}")
                 edge = pydot.Edge(practice, reduce_fail)
                 edge.set_tooltip(f"{practice}  reduces the failure rate of  {reduce_fail}")
-                edge.set_color(constants.ORANGE)
+                edge.set_color(constants.EDGE2)
                 graph.add_edge(edge)
 
         if hasattr(practices[practice], 'better_with'):
@@ -93,7 +93,7 @@ def make_the_map():
                 print(f"{practice}  -+->   {better_with}")
                 edge = pydot.Edge(practice, better_with)
                 edge.set_tooltip(f"{practice}  better together with  {better_with}")
-                edge.set_color(constants.PURPLE)
+                edge.set_color(constants.EDGE3)
                 graph.add_edge(edge)
 
     #print(Practices)
