@@ -25,7 +25,7 @@
     "Branching Strategy":{
         "Description": "A strategy for version control branching",
         "Enables":[
-            "Repository composition",
+            "Repository Composition",
             "Parametrised Infrastructure as Code"
         ],
         "ReducesFailureOf":[
@@ -72,7 +72,38 @@
     "Continuous Integration":{
         "Description" : "Automatically integrate code from all sources, build and run ready for test",
         "Enables":[
-            "Continuous Delivery"
+            "Continuous Delivery",
+            "Immutable Artefacts"
+        ]
+    },
+    "Semantic Versioning":{
+        "Description": "Using Semantic Versioning to understand the application & component versions",
+        "Enables": [
+            "Release Views"
+        ],
+        "ReducesFailureOf":[
+            "Immutable Artefacts"
+        ]
+    },
+    "Separation of internal versioning from Marketing versioning":{
+        "Description": "Separating internal versioning from Customer facing and Marketing versioning of a product"
+    },
+    "Release Views": {
+        "Description": "Application or Component artefacts are versioned using Sem Ver but only some are released via a view",
+        "ReducesFailureOf":[
+            "Semantic Versioning"
+        ],
+        "Enables":[
+            "Separation of internal versioning from Marketing versioning"
+        ]
+    },
+    "Immutable Artefacts":{
+        "Description": "Build artefacts are immutable",
+        "ReducesFailureOf":[
+            "Continuous Integration"
+        ],
+        "Enables":[
+            "Semantic Versioning"
         ]
     },
     "Continuous Delivery":{
