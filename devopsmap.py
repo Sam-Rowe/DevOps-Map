@@ -53,7 +53,7 @@ def read_map_json():
 def make_the_map():
     # start = "Automated Testing"
     graph = pydot.Dot()
-    graph.set_rankdir("LR")
+    graph.set_rankdir("TB")
     # automatic = pydot.Cluster()
     # automatic.set_label("automatic")
     # automatic.set_fontcolour("darkgrey")
