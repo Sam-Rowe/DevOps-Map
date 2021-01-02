@@ -2,7 +2,8 @@
     "Automated Testing":{
         "Description" : "Automating tests",
         "BetterTogetherWith":[
-            "Exploratory Testing"
+            "Exploratory Testing",
+            "Code Quality Scans"
         ],
         "ReducesFailureOf":[
             "Continuous Integration"
@@ -13,6 +14,13 @@
         "Description": "Test units of code independently",
         "Enables":[
             "Continuous Integration"
+        ]
+    },
+    "Code Quality Scans":{
+        "Descriptions": "Scanning code for quality and rasing work to remediate",
+        "BetterTogetherWith":[
+            "Agile Work ( Kanban/Scrum )",
+            "Automated Testing"
         ]
     },
     "Agile Work ( Kanban/Scrum )":{
@@ -106,20 +114,62 @@
             "Semantic Versioning"
         ]
     },
+    "Containerised Application":{
+        "Description":"Containerising an application",
+        "ReducesFailureOf":[
+            "Continuous Deployment"
+        ]
+    },
     "Continuous Delivery":{
         "Description" : "Automatically build latest integrated code, prepare ready to run in production",
         "Enables":[
+            "Continuous Deployment",
+            "Containerised Application"
+        ],
+        "BetterTogetherWith":[ "Secrets Vault" ]
+
+    },
+    "Secrets Vault":{
+        "Description": "Secure secrets and remove from all code and configuration",
+        "BetterTogetherWith":[
+            "Continuous Delivery",
             "Continuous Deployment"
         ]
-
     },
     "Continuous Deployment":{
         "Description" : "Deploy the latest build to production automatically",
         "Enables":[
             "Dark Launching",
-            "Crops not Garden plants"
+            "Crops not Garden plants",
+            "Canary Releases",
+            "Blue/Green Deployment",
+            "Microservice Ecosystem"
+        ],
+        "BetterTogetherWith":[ "Secrets Vault" ]
+    },
+    "Feature Toggles":{
+        "Description": "Configuration toggles for features",
+        "ReducesFailureOf":[
+            "Microservice Ecosystem"
+        ],
+        "BetterTogetherWith":[
+            "Config Database/Git"
         ]
-        
+    },
+    "Config Database/Git":{
+        "Description": "Storing configruation in a Database or in Git",
+        "BetterTogetherWith":[
+            "Feature Toggles"
+        ]
+    },
+    "Microservice Ecosystem":{
+        "Description": "Microservices, macro services or api ecosystem"
+    },
+    "Blue/Green Deployment":{
+        "Description": "Deploying to an alternative production environment, final testing and switch over"
+    },
+    "Canary Releases":{
+        "Description": "Rolling out changes to a small subset of users before all users"
     },
     "Chaos Agent":{
         "Description": "A chaos agent randomly unplugs, disables, breaks things to test resiliency",
