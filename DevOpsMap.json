@@ -19,6 +19,41 @@
         "Description": "Planning and organising work using agile methods",
         "ReducesFailureOf":[
             "Test Driven Development"
+        ],
+        "Enables":["Branching Strategy"]
+    },
+    "Branching Strategy":{
+        "Description": "A strategy for version control branching",
+        "Enables":[
+            "Repository composition",
+            "Parametrised Infrastructure as Code"
+        ],
+        "ReducesFailureOf":[
+            "Continuous Integration",
+            "Infrastructure as Code"
+        ]
+    },
+    "Repository Composition":{
+        "Description": "Mono repository or Macro repositories, slice by function or domain"
+    },
+    "Infrastructure as Code":{
+        "Description": "Code that automates the build or defines infrastructure",
+        "Enables":[
+            "Continuous Delivery",
+            "Parametrised Infrastructure as Code"
+        ],
+        "ReducesFailureOf":[
+            "Continuous Delivery",
+            "Parametrised Infrastructure as Code"
+        ]
+    },
+    "Parametrised Infrastructure as Code":{
+        "Description": "Re usable IaC for all environments using parameters"
+    },
+    "Dark Launching" :{
+        "Description": "Decouple deployment from release of features",
+        "ReducesFailureOf":[
+            "Continuous Deployment"
         ]
     },
     "Test Driven Development":{
@@ -48,7 +83,24 @@
 
     },
     "Continuous Deployment":{
-        "Description" : "Deploy the latest build to production automatically"
+        "Description" : "Deploy the latest build to production automatically",
+        "Enables":[
+            "Dark Launching",
+            "Crops not Garden plants"
+        ]
+        
+    },
+    "Chaos Agent":{
+        "Description": "A chaos agent randomly unplugs, disables, breaks things to test resiliency",
+        "ReducesFailureOf":[
+            "Continuous Deployment"
+        ]
+    },
+    "Crops not Garden plants":{
+        "Description": "Crops are grown at scale for commercial use, don't get attached. Pet plants in the Garden are loved and tended too individually rather than for ruthless efficiency",
+        "ReducesFailureOf":[
+            "Continuous Deployment"
+        ]
     }
     
 }

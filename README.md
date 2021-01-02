@@ -36,3 +36,6 @@ apt-get update && apt-get -y install --no-install-recommends graphviz python3-pi
 pipenv shell
 pipenv install pydot pydot-ng
 ```
+
+## Resulting SVG
+![DevOps Map SVG](DevOpsMap.svg)
