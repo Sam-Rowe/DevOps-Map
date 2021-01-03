@@ -53,3 +53,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends graphviz python3-pip
 
 RUN pip install pipenv
+
+RUN npm install -g tslint-to-eslint-config typescript
