@@ -30,31 +30,31 @@ flowchart TB
 
     AutomatedTesting  <-. Better Together With  .-> ExploratoryTesting
     AutomatedTesting  <-. Better Together With  .-> CodeQualityScans
-    AutomatedTesting --> | ReducesFailureOf | ContinuousIntegration
+    AutomatedTesting .-> | Reduces Failure Of | ContinuousIntegration
     UnitTesting --> | Enables | ContinuousIntegration
     CodeQualityScans  <-. Better Together With  .-> AgileWork
-    AgileWork --> | ReducesFailureOf | TestDrivenDevelopment
+    AgileWork .-> | Reduces Failure Of | TestDrivenDevelopment
     AgileWork --> | Enables | BranchingStrategy
     BranchingStrategy --> | Enables | RepositoryComposition
     BranchingStrategy --> | Enables | ParametrisedInfrastructureasCode
-    BranchingStrategy --> | ReducesFailureOf | ContinuousIntegration
-    BranchingStrategy --> | ReducesFailureOf | InfrastructureasCode
+    BranchingStrategy .-> | Reduces Failure Of | ContinuousIntegration
+    BranchingStrategy .-> | Reduces Failure Of | InfrastructureasCode
     InfrastructureasCode --> | Enables | ContinuousDelivery
     InfrastructureasCode --> | Enables | ParametrisedInfrastructureasCode
-    InfrastructureasCode --> | ReducesFailureOf | ContinuousDelivery
-    InfrastructureasCode --> | ReducesFailureOf | ParametrisedInfrastructureasCode
-    DarkLaunching --> | ReducesFailureOf | ContinuousDeployment
-    TestDrivenDevelopment --> | ReducesFailureOf | UnitTesting
-    TestDrivenDevelopment --> | ReducesFailureOf | AutomatedTesting
+    InfrastructureasCode .-> | Reduces Failure Of | ContinuousDelivery
+    InfrastructureasCode .-> | Reduces Failure Of | ParametrisedInfrastructureasCode
+    DarkLaunching .-> | Reduces Failure Of | ContinuousDeployment
+    TestDrivenDevelopment .-> | Reduces Failure Of | UnitTesting
+    TestDrivenDevelopment .-> | Reduces Failure Of | AutomatedTesting
     ContinuousIntegration --> | Enables | ContinuousDelivery
     ContinuousIntegration --> | Enables | ImmutableArtefacts
     SemanticVersioning --> | Enables | ReleaseViews
-    SemanticVersioning --> | ReducesFailureOf | ImmutableArtefacts
-    ReleaseViews --> | ReducesFailureOf | SemanticVersioning
+    SemanticVersioning .-> | Reduces Failure Of | ImmutableArtefacts
+    ReleaseViews .-> | Reduces Failure Of | SemanticVersioning
     ReleaseViews --> | Enables | SeparationofinternalversioningfromMarketingversioning
-    ImmutableArtefacts --> | ReducesFailureOf | ContinuousIntegration
+    ImmutableArtefacts .-> | Reduces Failure Of | ContinuousIntegration
     ImmutableArtefacts --> | Enables | SemanticVersioning
-    ContainerisedApplication --> | ReducesFailureOf | ContinuousDeployment
+    ContainerisedApplication .-> | Reduces Failure Of | ContinuousDeployment
     ContinuousDelivery --> | Enables | ContinuousDeployment
     ContinuousDelivery --> | Enables | ContainerisedApplication
     SecretsVault  <-. Better Together With  .-> ContinuousDelivery
@@ -64,7 +64,7 @@ flowchart TB
     ContinuousDeployment --> | Enables | CanaryReleases
     ContinuousDeployment --> | Enables | Blue/GreenDeployment
     ContinuousDeployment --> | Enables | MicroserviceEcosystem
-    FeatureToggles --> | ReducesFailureOf | MicroserviceEcosystem
+    FeatureToggles .-> | Reduces Failure Of | MicroserviceEcosystem
     FeatureToggles  <-. Better Together With  .-> ConfigDatabase/Git
-    ChaosAgent --> | ReducesFailureOf | ContinuousDeployment
-    CropsnotGardenplants --> | ReducesFailureOf | ContinuousDeployment
+    ChaosAgent .-> | Reduces Failure Of | ContinuousDeployment
+    CropsnotGardenplants .-> | Reduces Failure Of | ContinuousDeployment
