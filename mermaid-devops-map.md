@@ -1,4 +1,4 @@
-graph RL
+flowchart RL
     AgileWork(Agile Work)
     AutomatedTesting(Automated Testing)
     Blue/GreenDeployment(Blue/Green Deployment)
@@ -28,12 +28,12 @@ graph RL
     TestDrivenDevelopment(Test Driven Development)
     UnitTesting(Unit Testing)
 
-    AutomatedTesting --> | BetterTogetherWith| ExploratoryTesting
-    AutomatedTesting --> | BetterTogetherWith | CodeQualityScans
+    AutomatedTesting  <-. BetterTogetherWith .-> ExploratoryTesting
+    AutomatedTesting  <-. BetterTogetherWith .-> CodeQualityScans
     AutomatedTesting --> | ReducesFailureOf | ContinuousIntegration
     UnitTesting --> | Enables | ContinuousIntegration
-    CodeQualityScans --> | BetterTogetherWith | AgileWork
-    CodeQualityScans --> | BetterTogetherWith | AutomatedTesting
+    CodeQualityScans  <-. BetterTogetherWith .-> AgileWork
+    CodeQualityScans  <-. BetterTogetherWith .-> AutomatedTesting
     AgileWork --> | ReducesFailureOf | TestDrivenDevelopment
     AgileWork --> | Enables | BranchingStrategy
     BranchingStrategy --> | Enables | RepositoryComposition
@@ -47,7 +47,7 @@ graph RL
     DarkLaunching --> | ReducesFailureOf | ContinuousDeployment
     TestDrivenDevelopment --> | ReducesFailureOf | UnitTesting
     TestDrivenDevelopment --> | ReducesFailureOf | AutomatedTesting
-    ExploratoryTesting --> | BetterTogetherWith | AutomatedTesting
+    ExploratoryTesting  <-. BetterTogetherWith .-> AutomatedTesting
     ContinuousIntegration --> | Enables | ContinuousDelivery
     ContinuousIntegration --> | Enables | ImmutableArtefacts
     SemanticVersioning --> | Enables | ReleaseViews
@@ -59,16 +59,16 @@ graph RL
     ContainerisedApplication --> | ReducesFailureOf | ContinuousDeployment
     ContinuousDelivery --> | Enables | ContinuousDeployment
     ContinuousDelivery --> | Enables | ContainerisedApplication
-    SecretsVault --> | BetterTogetherWith | ContinuousDelivery
-    SecretsVault --> | BetterTogetherWith | ContinuousDeployment
+    SecretsVault  <-. BetterTogetherWith .-> ContinuousDelivery
+    SecretsVault  <-. BetterTogetherWith .-> ContinuousDeployment
     ContinuousDeployment --> | Enables | DarkLaunching
     ContinuousDeployment --> | Enables | CropsnotGardenplants
     ContinuousDeployment --> | Enables | CanaryReleases
     ContinuousDeployment --> | Enables | Blue/GreenDeployment
     ContinuousDeployment --> | Enables | MicroserviceEcosystem
-    ContinuousDeployment --> | BetterTogetherWith | SecretsVault
+    ContinuousDeployment  <-. BetterTogetherWith .-> SecretsVault
     FeatureToggles --> | ReducesFailureOf | MicroserviceEcosystem
-    FeatureToggles --> | BetterTogetherWith | ConfigDatabase/Git
-    ConfigDatabase/Git --> | BetterTogetherWith | FeatureToggles
+    FeatureToggles  <-. BetterTogetherWith .-> ConfigDatabase/Git
+    ConfigDatabase/Git  <-. BetterTogetherWith .-> FeatureToggles
     ChaosAgent --> | ReducesFailureOf | ContinuousDeployment
     CropsnotGardenplants --> | ReducesFailureOf | ContinuousDeployment
