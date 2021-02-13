@@ -15,14 +15,14 @@ Big thank you to Neil Kidd and Vasileios Vlachos for your Python support!
 
 I have flip flopped on the connection names. I want to keep it simple and have as few edge types as possible to maintain the understanding of the map but some descriptions are better than others.
 
-__The three I have chosen are:__
+### The three I have chosen are:
 
 * Enables  
    Enables is a one way -> edge. This Enables that to work. I considered, enhances but it isn't strong enough. Enables is almost Mandatory in my mind.
 * BetterTogetherWith
    This is better together with that. <--> A Bidirectional edge. Both nodes need to match the other for validation. They are both more useful when both are being used. But that does not mean they have to be.
 * ReducesFailureOf
-   This reduces the failure of that. -> a one way edge. Not mandatory, the *that* can be done without *this* but it is more risky. I have considered changing the term to Increase Confidence In but thought it less accurate. Feel free to share with Sponsors and busines groups the constructed synonym in this context.
+   This reduces the failure of that. -> a one way edge. Not mandatory, the *that* can be done without *this* but it is more risky. I have considered changing the term to Increase Confidence In but thought it less accurate. Feel free to share with Sponsors and business groups the constructed synonym in this context.
 
 ## References and Libraries
 
