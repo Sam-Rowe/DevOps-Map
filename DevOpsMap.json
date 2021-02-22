@@ -17,7 +17,7 @@
         ]
     },
     "Code Quality Scans":{
-        "Descriptions": "Scanning code for quality and rasing work to remediate",
+        "Descriptions": "Scanning code for quality and raising work to remediate",
         "BetterTogetherWith":[
             "Agile Work ( Kanban/Scrum )",
             "Automated Testing"
